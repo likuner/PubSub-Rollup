@@ -1,0 +1,45 @@
+{
+  "name": "@likun./pubsub",
+  "version": "1.0.1",
+  "description": "A lib for publish-subscribe design pattern.",
+  "keywords": [
+    "pubsub",
+    "publish-subscribe",
+    "events",
+    "emit",
+    "design pattern"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/pubsub.esm.min.js",
+      "require": "./dist/pubsub.cjs.min.js",
+      "default": "./dist/pubsub.min.js"
+    }
+  },
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint ./src --ext .ts,.js",
+    "lint:fix": "eslint ./src --ext .ts,.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/likuner/PubSub.git"
+  },
+  "author": "Hunter",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^18.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "eslint": "^8.30.0",
+    "rollup": "^3.17.2",
+    "rollup-plugin-dts": "^5.2.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.4"
+  }
+}
