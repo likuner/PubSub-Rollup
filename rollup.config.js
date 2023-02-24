@@ -1,49 +1,51 @@
 import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
 
+const name = 'pubsubLib'
+
 export default [
   {
     input: 'src/index.ts',
     output: [
       {
-        file: 'dist/pubsub.cjs.js',
+        file: 'dist/index.cjs.js',
         format: 'cjs'
       },
       {
-        file: 'dist/pubsub.cjs.min.js',
+        file: 'dist/index.cjs.min.js',
         format: 'cjs',
         plugins: [
           terser()
         ]
       },
       {
-        file: 'dist/pubsub.esm.js',
+        file: 'dist/index.esm.js',
         format: 'es'
       },
       {
-        file: 'dist/pubsub.esm.min.js',
+        file: 'dist/index.esm.min.js',
         format: 'es',
         plugins: [
           terser()
         ]
       },
       {
-        file: 'dist/pubsub.iife.js',
+        file: 'dist/index.browser.js',
         format: 'iife',
-        name: 'PubSubLib'
+        name
       },
       {
-        file: 'dist/pubsub.iife.min.js',
+        file: 'dist/index.browser.min.js',
         format: 'iife',
-        name: 'PubSubLib',
+        name,
         plugins: [
           terser()
         ]
       },
       {
-        file: 'dist/pubsub.min.js',
+        file: 'dist/index.min.js',
         format: 'umd',
-        name: 'PubSubLib',
+        name,
         plugins: [
           terser()
         ]

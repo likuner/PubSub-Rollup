@@ -1,4 +1,4 @@
-var PubSubLib = (function (exports) {
+var pubsubLib = (function (exports) {
     'use strict';
 
     class PubSub {

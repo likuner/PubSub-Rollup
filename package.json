@@ -11,15 +11,15 @@
   ],
   "type": "module",
   "exports": {
-    ".": {
-      "import": "./dist/pubsub.esm.min.js",
-      "require": "./dist/pubsub.cjs.min.js",
-      "default": "./dist/pubsub.min.js"
-    }
+    "import": "./dist/pubsub.esm.min.js",
+    "require": "./dist/pubsub.cjs.min.js",
+    "default": "./dist/pubsub.min.js"
   },
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/index.browser.min.js",
+  "jsdelivr": "./dist/index.browser.min.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && gulp",
     "lint": "eslint ./src --ext .ts,.js",
     "lint:fix": "eslint ./src --ext .ts,.js --fix"
   },
@@ -29,13 +29,19 @@
   },
   "author": "Hunter",
   "license": "MIT",
+  "engines": {
+    "node": ">= 16"
+  },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
+    "del": "^7.0.0",
     "eslint": "^8.30.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "rollup": "^3.17.2",
     "rollup-plugin-dts": "^5.2.0",
     "ts-node": "^10.9.1",
